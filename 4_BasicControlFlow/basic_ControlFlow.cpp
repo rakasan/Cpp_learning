@@ -9,15 +9,16 @@ cout << "Enter the number ";
 cin >>number;
 
 /* Check the sense */
-    if(number >= 0)
-    {
-        cout <<"The number is positive";
-    }
-    else
-    {
+if(number >= 0)
+{
+    cout <<"The number is positive";
+}
+else
+{
 
-        cout <<"The number is negative";
-    }
+    cout <<"The number is negative";
+}
 
+cout <<"Default statement";
 return 0;
 }
