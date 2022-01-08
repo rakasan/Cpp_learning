@@ -35,7 +35,7 @@ void student::DisplayRecordAtPosition(int n)
     ifs.open("he.dat",ios::in|ios::binary);
     ifs.seekg((n-1)*sizeof(student));
     ifs.read((char*)this,sizeof(student));
-    putdata();
+    putData();
     ifs.close();
 
 }
