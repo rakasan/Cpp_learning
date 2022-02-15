@@ -1,10 +1,11 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include <conio.h>
 #include <fstream>
 #include <windows.h>
 #include <unistd.h>
 using namespace std;
+
 
 class one
 {
@@ -14,37 +15,38 @@ public:
 
 void one::menul()
 {
-    cout<<"\n\n\n\t\t\t\t\t============Welcome to food ordering app=============="<<endl;
-    cout<<"\n\n\n\t\t\t\t\t================Start your order============="<<endl;
-    cout<<"\n\n\n\t=====================\t\t\t=============================\t\t\t========="<<endl;
+    cout<<"\n\n\n\t\t\t\t\t\ ===============WELCOME TO FOOD ORDERING APP ================"<<endl;
+    cout<<"\n\n\n\t\t\t\t\t =====================START YOUR ORDER================="<<endl;
+    cout<<"\n\n\n\t===============================\t\t\t============================\t\t\t\t======================================="<<endl;
     cout<<"\t[1] Veggie Supreme (Rs.480)\t\t\t[2] Exotica Pizza(Rs.440)\t\t\t\t[3] Chicken Sizzler (Rs.580)\n\t[4] Chrispy Chicken (Rs.520)\t\t\t[5] Spaghetti (Rs.350)\t\t\t\t\t[6] Country Feast (Rs.400)\n\t[7] Tetrazzini (Rs.420)\t\t\t\t[8] Double Cheese (Rs.540)\t\t\t\t[9] Makizushi (Rs.548)\n\t[10] Ham Burger (Rs.390)\t\t\t[11] Margherita Pizza(Rs.525)\t\t\t\t[12] Fish 'n' Chips (Rs.425)\n\t[13] Fajitas (Rs.335)\t\t\t\t[14] Tempura (Rs.324)\t\t\t\t\t[15] Hot Dog (Rs.360)\n\t===========================\t\t\t==============================\t\t\t\t===========================\n\n\n\t\t\t\t\t\t\t\t[16] EXIT"<<endl;
+
 }
 
 class two:public one
 {
 protected:
-    int pizza,ch,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s = 0;
+    int pizza,ch,a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s=0;
     string y,ye;
 public:
     void menu2()
     {
-
         ofstream write;
-        write.open("order.txt");
+        write.open("order.text");
         if(!write)
         {
-            cout<<"File can not open"<<endl;
+            cout<<"File cannot open"<<endl;
             exit(-1);
         }
         a:
             b:
                 c:
-                    cout<<"\n\n\t Enter your order (one order at a time): ";
+                    cout<<"\n\n\tENTER YOUR ORDER (one order at a time): ";
                     cin>>ch;
 
-                    cout<<"\n\n\tDo you want to update your order(y/n): ";
+                    cout<<"\n\n\tDO YOU WANT TO UPDATE YOUR ORDER (y/n): ";
                     cin>>ye;
-                    if(ye=='y'||ye=='Y')
+
+                    if(ye=="y"||ye=="Y")
                     {
                         goto b;
                     }
@@ -255,29 +257,102 @@ public:
                                 cout<<"\n\n\t\t\t\t\t YOU ENTERED WRONG ORDER KEY!!!!"<<endl;
                                 goto c;
                                 break;
+                        }
+                        cout<<"\n\tDO YOU WANT ANOTHER ORDER (yes/no): ";
+                        cin>>y;
+                        if(y=="yes"||y=="YES")
+                        {
+                            goto a;
+                        }
+                        else{cout<<"\n\t\t\t\t\tTHANK YOU FOR YOUR ORDER :) GENERATING BILL";}
+                        for(int a=1;a<0;a++)
+                        {
+                            Sleep(500);
+                            cout<<"...";
+                        }
+                        cout<<"\n\t\t\t\t\t\t";
+                        system("PAUSE");
+
                     }
-                    cout<<"\n\t Do you want another order(y/n)";
-                    cin>>y;
-                    if(y=="yes"||y=="YES")
-                    {
-                        goto a;
-                    }
-                    else
-                    {
-                        cout<<"\n\t\t\t\tThank you for your order :) Generating bill";
-                    }
-                    for(int a = 1;a<10;a++)
-                    {
-                        sleep(500);
-                        cout<<"..."
-                    }
-                    cout<<"\n\t\t\t\t\t";
-                    system("PAUSE");
+
+   system("cls");
+   cout<<"\n\t\t\t\t\t\t ========================================================="<<endl;
+   cout<<"\n\t\t\t\t\t\t                 FOOD ORDERING SYSTEM                    !"<<endl;
+   cout<<"\n\t\t\t\t\t\t ========================================================="<<endl;
+
+   cout<<endl;
+   cout<<endl;
+
+   cout<<"\t\t\t\t\t\t Bill No: CP51               Order: NB1353"<<endl;
+   cout<<endl;
+   cout<<endl;
+   cout<<"\t\t\t\t\t\t\ Cashier: Harry"<<endl;
+   cout<<endl;
+   cout<<"\n\t\t\t\t\t\t YOUR TOTAL BILL IS Rs."<<s<<endl;
+   write<<"\t\t\t\t\t\t\t";
+   write<<"\t\t\t\t\t\t\tTOTAL BILL IS Rs."<<s;
+   cout<<"\n\t\t\t\t\t\t\t\t=================================================="<<endl;
+
+   write.close();
     }
-    system("cls");
-    cout<<"\n\t\t\t\t============================================"<<endl;
-    cout<<"\n\t\t\t\t\t Food ordering system                    !"<<endl;
-      cout<<"\n\t\t\t\t============================================"<<endl;
-      cout<<endl;
-      cout<<endl;
+    void showl()
+    {
+        menul();
+        menu2();
+    }
 };
+class three:public one,public two
+{
+	public:
+		void total()
+      {
+      		long userId; //for user id of administrator
+
+			d:
+			cout<<"\n\n\n\n\n\n\n\n\t\t\t\t\t\t\t---------------------";
+			cout<<"\n\t\t\t\t\t\t\tEnter Login Id = ";
+			cin>>userId;
+			cout<<"\t\t\t\t\t\t\t---------------------";
+			if(userId!=1353)
+			{
+				cout<<"\nDon't try to be smart.....Enter correct id\n";
+				goto d;
+			}
+			else
+			cout<<"\n\n\n\t\t\t\t\t\t\tHello Code-Projects,\n";
+			z:
+			string pwd="pass";  //password
+			string pass="";  //empty string
+			char c;
+				cout<<"\n\n\n\t\t\t\t\t\t\tPassword = ";
+				p:
+				c=_getch();
+				cout<<"*";   //for printing * instead for password
+				if(c!=13)
+				{
+					pass=pass+c;  //for concatenating the string
+					goto p;
+				}
+
+      			{
+      			if(pass==pwd)
+      			{
+      				cout<<"\n\n\t\t\t\t\t\t\tAccess Granted. Welcome to our system\n\n\n";
+      				system("PAUSE");
+      				system("CLS");
+      				showl();
+				}
+				else
+				{
+				cout<<"\nWrong Password\n";
+				goto z;
+				}
+			}
+		}
+};
+int main()
+{
+    three obj1;
+    obj1.total();
+    _getch();
+}
